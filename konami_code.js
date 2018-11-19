@@ -11,6 +11,21 @@ const codes = [
   "a"
 ];
 
+let keyCount = 0;
+
 function init() {
-  // your code here
+  document.body.addEventListener("keydown", konamiChecker)
+}
+
+function konamiChecker(e) {
+  console.log(e.key)
+  if (e.key == codes[keyCount]) {
+    keyCount++
+  } else {
+    keyCount = 0
+  }
+  console.log(keyCount)
+  if (keyCount == 4) {
+    alert("yay")
+  }
 }
